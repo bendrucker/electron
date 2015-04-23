@@ -118,8 +118,7 @@ void Browser::SetUserTasks(const std::vector<UserTask>& tasks) {
 }
 
 void Browser::SetAppUserModelID(const std::string& name) {
-  app_user_model_id_ = base::string16(L"electron.app.");
-  app_user_model_id_ += base::UTF8ToUTF16(name);
+  app_user_model_id_ = base::UTF8ToUTF16(name);
   SetCurrentProcessExplicitAppUserModelID(app_user_model_id_.c_str());
 }
 
