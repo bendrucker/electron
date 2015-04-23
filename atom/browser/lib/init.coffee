@@ -70,10 +70,11 @@ throw new Error("Unable to find a valid app") unless packageJson?
 app.setVersion packageJson.version if packageJson.version?
 
 # Set application's name.
+prefix = 'electron.app.'
 if packageJson.productName?
-  app.setName packageJson.productName
+  app.setName prefix + packageJson.productName
 else if packageJson.name?
-  app.setName packageJson.name
+  app.setName prefix + packageJson.name
 
 # Set application's desktop name.
 if packageJson.desktopName?
